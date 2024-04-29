@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: orange;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20vh;
+}
+
+.upper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.forgot-password {
+    text-align: center;
+    border-bottom: 1px solid black;
+    margin-top: 25px;
+    margin-bottom: 60px;
+}
+
+.p {
+    margin-top: 10px;
+}
+
+.email {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    width: 300px;
+    margin-top: 10px;
+    background: none;
+    border-bottom: 1px solid black; /* Added to better distinguish the input */
+    padding: 5px; /* Added for better spacing */
+}
+
+.main-com {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    
+}
+
+.submit {
+    height: 35px;
+    color: white;
+    background-color: orangered;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border: none;
+    width: 100px;
+    margin-top: 20px;
+    margin-left:150px;
+}
+
+.submit:hover {
+    background-color: black;
+}
+
+.border {
+    height: 60vh;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.arrow {
+    font-size: 24px;
+    margin-right: 10px;
+    padding-bottom:12px;
+}

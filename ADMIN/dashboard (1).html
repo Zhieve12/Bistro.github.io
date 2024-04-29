@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Rental Admin Dashboard</title>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            background-color:bisque;
+            color:white; 
+        }
+
+        header {
+            background-color:orange; 
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
+        }
+
+        .menu-toggle {
+            font-size: 24px; 
+            margin-right: 20px; 
+            color:orangered; 
+            cursor: pointer; 
+        }
+
+        .dashboard {
+            display: flex;
+            flex-direction: row; 
+            align-items: flex-start; 
+            justify-content: center; 
+        }
+
+        .menu-container {
+            display: flex;
+            flex-direction: column;
+            height:100%;
+            position: fixed;
+    top: 0;
+    left: 0;
+        }
+
+        .menu {
+            background-color:orangered; 
+            color:white;
+            width: 250px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start; 
+            padding-top:150px;
+            padding-bottom:100%;
+            height: calc(100vh - 64px); 
+            transition: transform 0.3s ease-in-out;
+            transform: translateX(-250px);
+            z-index: 1;
+            top: 0;
+            position: fixed;
+        }
+
+        .menu.active {
+            transform: translateX(0);
+        }
+
+        .menu-item {
+            padding: 10px 20px;
+            width: 100%;
+            box-sizing: border-box;
+            cursor: pointer;
+            border-bottom: 1px solid gray; 
+            text-align: left;
+            display: flex;
+            align-items: center; 
+             font-size:20px; 
+             text-decoration: none;
+             color: white; 
+        }
+
+        
+        .menu-item a {
+           color:white;
+            text-decoration:none;
+        }
+        
+        
+        .menu-item i {
+            margin-right: 10px; 
+            font:30px;
+        }
+
+        .menu-item .text {
+            margin-left: 10px;
+        }
+
+        .menu-item:hover {
+            background-color:orange; 
+        }
+
+        .menu-item:last-child {
+            border-bottom: none; 
+        }
+        
+        .menu-text {
+            position: absolute;
+            top:15px; 
+            left: 10px; 
+            color: #fff; 
+            font-size:21px;
+            font-family: Arial, sans-serif; 
+            font-weight: bold;
+            border-bottom: 1px solid #fff;
+        }
+
+        .close-menu-button {
+            cursor: pointer;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content:flex-start;
+            position:absolute;
+            top:10px;
+            left:210px;
+        }
+
+        .close-menu-button i {
+            transform: rotate(0deg);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .menu.active .close-menu-button i {
+            transform: rotate(180deg);
+        }
+         
+        .menu.active{
+            padding-bottom:100%;
+        }
+
+        .dashboard {
+            width: 100%;
+            justify-content: center;
+            align-items:center;
+            
+            
+        }
+
+        .dashboard-content {
+            display: flex;
+            margin-top:10%;
+            flex-direction: row;
+            justify-content:center; 
+            width:100%;
+            padding:0;
+            align-items:center;
+            font:30px;
+            text-decoration:none;
+            
+        }
+
+        .card {
+            background-color:orange; 
+            padding:28px;
+            margin:5px;
+            margin-bottom: 20px;
+            border-radius: 30px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
+            align-items:center;
+            text-decoration:none;
+            font:20px;
+            margin-top:160px;
+            width:20%;
+            height:200px;
+        }
+
+        .card h2 {
+            font-size:20em; 
+            color:white;
+            text-decoration:none;
+        }
+
+        .card a {
+            font-size: 1.9em; 
+            color:#fff; 
+        }
+        
+
+        .profile-section {
+            display: flex;
+            align-items: center;
+            justify-content:flex-end;
+            margin-right:5%;
+        }
+
+        .profile-picture {
+            width:80px;
+            height:55px;
+            border-radius: 50%;
+            background-color:orange; 
+            margin-right:15%;
+        }
+
+        .profile-picture img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%; 
+            
+        }
+
+        .profile-name {
+            color: white;
+            font-weight: bold;
+           
+        }
+        .profile-icon-container{
+            color:white;
+            size:50px;
+        }
+
+        .input-group {
+            margin-right:18%; 
+            margin-left:30px;
+            align-items: center;
+            border-radius: 5px 5px 5px 5px; 
+            outline: none;
+            width:40%;
+        }
+
+        .input-group .form-control {
+            border-radius: 15px;
+            border: none;
+        }
+        .search-button {
+            padding: 7px 8px;
+            background-color:orangered; 
+            border: none;
+            border-radius: 0 5px 5px 0; 
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease; 
+            
+        }
+        .search-button:hover {
+            background-color:orangered; 
+        }
+
+        .logout {
+            margin-top:100%; 
+            padding: 10px 20px;
+            text-align: left;
+            color:white; 
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+         }
+
+        .logout i {
+            margin-right: 10px; 
+        }
+        .add-listing-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.add-button {
+    border-radius: 60%;
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+    background-color:orangered;
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.add-button:hover {
+    background-color:black;
+}
+
+    
+        @media (max-width: 768px) {
+            .dashboard-content {
+                flex-direction: column; 
+            }
+         
+          
+.menu-item .text a {
+    color: white; 
+}
+
+.menu-item .text a:hover {
+    text-decoration: underline;
+}
+        }
+        .dropbtn {
+            background-color: #ff6d00;
+  border: none;
+  color: white;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width:200px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  border-radius: 5px;
+  padding: 10px;
+  text-align: center;
+}
+.dropdown-content a {
+  color: #333; /* Dark text color */
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  border-bottom: 1px solid #ccc; /* Add a bottom border to separate links */
+}
+.dropdown-content a:hover {
+  background-color: #f1f1f1; /* Light gray background color */
+}
+.show {
+  display: block;
+}
+.admin-icon {
+  width: 80px;
+  height: 80px;
+  border-radius:50%;
+}
+
+/* Center the dropdown button */
+.dropdown {
+  display: flex;
+  align-items:flex-end;
+  flex-direction: column;
+  color:black;
+  font-size:12px;
+}
+.profile-icon {
+  width: 50px;
+  height: 50px;
+}
+.admin-avatar{
+    width:50px;
+    height:50px;
+    border-radius:30px;
+}
+</style>
+</head>
+
+<body>
+    <header>
+        <div class="menu-toggle" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
+        
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search...">
+              <button class="search-button">Search</button>
+        </div>
+
+</head>
+<body>
+
+<div class="dropdown">
+    <div class="profile-icon-container">
+        <i class="fas fa-user-circle fa-2x" onclick="toggleDropdown()"></i>
+        <span class="profile-icon-label">Admin</span>
+      </div>
+      <div id="dropdown-content" class="dropdown-content">
+        <img src="../img/mm.jpg.jpg" alt="Admin Avatar" class="admin-avatar">
+        <p>admin@example.com</p>
+        <a href="#" onclick="logout()">Logout</a>
+      </div>
+    </div>
+
+<script>
+function toggleDropdown() {
+  var dropdownContent = document.getElementById("dropdown-content");
+  dropdownContent.classList.toggle("show");
+}
+
+function logout() {
+  alert("Logged out successfully!");
+}
+</script>
+
+</body>
+</html>
+
+            </div>
+        </div>
+       
+
+    </header>
+
+    <div class="dashboard">
+        <div class="menu-container">
+            <div class="menu" id="menu">
+                 <div class="menu-text">Menu</div>
+                 <div class="menu-item"><i class="fa fa-dashboard"></i><span class="text"><a href="dashboard (1).html">Dashboard</a></span></div>
+                <div class="menu-item"><i class="fas fa-comment-dots"></i><span  class="text"><a href="message.html">Message</a></span></div>
+                <div class="menu-item"><i class="fas fa-food"></i><span  class="text"><a href="menu.html">Menu</a></span></div>
+                <div class="menu-item"><i class="fas fa-calendar-alt"></i><span class="text"><a href="pending.html">Pending Orders</a></span></div>
+                <div class="menu-item"><i class="fas fa-users"></i><span class="text"><a href="customers1.html">Customers</a></span></div>
+                <div class="menu-item"><i class="fas fa-user-slash"></i><span class="text"><a href="restricted.html">Restricted Users</a></span></div>
+                <div class="menu-item logout"><i class="fas fa-sign-out-alt"></i><span class="adminlogin"><a href="adminlogin.html">Logout</a></span></div>
+                <div class="close-menu-button" onclick="toggleMenu()"><i class="fas fa-arrow-right"></i></div>
+            </div>
+        </div>     
+           <div class="card">
+        <i class='fas fa-clock' style='font-size:48px;color:orangered'></i>
+        <span class="text"><a href="ongoingorders.html">Ongoing</a></span>
+        <p>35</p>
+    </div>
+
+           <div class="card">
+        <i class='fas fa-calendar-check' style='font-size:48px;color:orangered;'></i>
+        <span class="text"><a href="done.html">History</a></span>
+        <p>374</p>
+    </div>
+</div>   
+    </div>
+
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('menu');
+            menu.classList.toggle('active');
+        }
+        function makeCarListing() {
+            
+            alert('Make a Listing of Cars button clicked!');
+        }
+        function addCarListing() {
+  
+    console.log('Add car listing logic goes here.');
+}
+
+    </script>
+</body>
+
+</html>

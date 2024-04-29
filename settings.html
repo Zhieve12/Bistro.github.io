@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>Settings</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+        }
+
+        .header {
+            background-color: white;
+            color: gray;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .arrow {
+            font-size: 24px;
+            margin-right: 10px;
+            padding-bottom: 12px;
+        }
+
+        .settings-text {
+            font-size: 20px;
+            position: relative;
+        }
+
+        .bistro-container {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            background-color: white;
+            margin-top: 20px;
+            justify-content: space-between;
+        }
+
+        .bistro-text {
+            font-size: 18px;
+            margin-right: 20px;
+            color: #808080;
+        }
+
+        .switch {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 60px;
+            height: 30px;
+            background-color: #ccc;
+            border-radius: 15px;
+            position: relative;
+            cursor: pointer;
+            overflow: hidden;
+        }
+
+        .switch input[type="checkbox"] {
+            display: none;
+        }
+
+        .switch.checked {
+            background-color: black;
+            
+        }
+
+        .slider {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 50%;
+            height: 100%;
+            background-color: #fff;
+            
+            border-radius: 15px;
+            transition: left 0.3s, background-color 0.3s;
+          
+        }
+
+        .switch input[type="checkbox"]:checked+.slider {
+            left: 50%;
+            background-color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <a href="./checkout.html"><i class="fas fa-arrow-left arrow"></i></a>
+        <div class="settings-text">Settings</div>
+    </div>
+    <div class="bistro-container">
+        <div class="bistro-text">Bistro: Comfort Food</div>
+        <label class="switch" id="switch">
+            <input type="checkbox" onclick="toggleSlider()">
+            <span class="slider"></span>
+        </label>
+    </div>
+
+    <script>
+        function toggleSlider() {
+            var switchElem = document.getElementById('switch');
+            switchElem.classList.toggle('checked');
+            var slider = document.querySelector('.slider');
+            slider.style.left = slider.style.left === '50%' ? '0' : '50%';
+            // Check if the switch is turned on
+            if (document.querySelector('.slider').style.left === '50%') {
+                // If switch is on, navigate to a different page
+                window.location.href = "checkout.html"; // Change the URL to your desired page
+            }
+        }
+    </script>
+</body>
+
+</html>

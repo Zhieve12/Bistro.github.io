@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+            color: #333;
+        }
+        .header {
+            background-color: white;
+            color:black;
+            padding: 10px 10px;
+            display: flex;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            height:6vh;
+        }
+        .arrow {
+            font-size: 24px;
+            margin-right: 10px;
+            padding-bottom:12px;
+        }
+        .profile-content {
+          margin-top: 5px;
+            padding-top: 100px
+           
+        }
+        .profile-info {
+            background-color: white;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        .profile-info h2 {
+            margin-top: 0;
+        }
+        .profile-info p {
+            margin-bottom: 10px;
+        }
+        .edit-profile-btn {
+            background-color: #ff5e14;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        .edit-profile-btn:hover {
+            background-color:black;
+        }
+    </style>
+</head>
+<body>
+        <div class="header">
+            <a href="./homepage.html"><i class="fas fa-arrow-left arrow"></i></a>
+            <div class="profile-text">Profile</div>
+        </div>
+    <div class="profile-content">
+        <div class="profile-info">
+            <h2>Personal Information</h2>
+            <p>Name: Kristina Gadem</p>
+            <p>Email:kristinagadem@gmail.com</p>
+            <p>Phone:09756392707</p>
+            <a href="./editprofile.html"><button class="edit-profile-btn">Edit Profile</button></a>
+        </div>
+        <div class="profile-info">
+            <h2>Address</h2>
+            <p>A & Subdivision, Putik, Zamboanga City</p>
+            <a href="./editprofile.html"><button class="edit-profile-btn">Edit Address</button></a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+            color: #333;
+        }
+        .header {
+            background-color: white;
+            color: black;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+        }
+        .arrow {
+            font-size: 24px;
+            margin-right: 10px;
+            padding-bottom: 12px;
+        }
+        .checkout-text {
+            font-size: 20px;
+            position: relative;
+        }
+        .checkout-content {
+            padding: 20px;
+            background-color: white;
+            margin-top: 20px;
+            line-height: 1.6;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        .address-section, .payment-method, .order-summary {
+            margin-bottom: 20px;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 10px;
+        }
+        .payment-method img {
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            vertical-align: middle;
+        }
+        .place-btn, .confirm-btn {
+            background-color:#ff5e14;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+        }
+        .place-btn, .confirm-btn:hover {
+            background-color: black;
+        }
+        button {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            color: #007bff;
+            font-size: 14px;
+        }
+        .checkbox-container {
+            display: flex;
+            align-items: center;
+          
+        }
+       
+     
+        .checkbox:checked + .custom-checkbox .checkmark {
+            display: block;
+           
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <a href="./cart.html"><i class="fas fa-arrow-left arrow"></i></a>
+        <div class="checkout-text">Checkout</div>
+    </div>
+    <div class="checkout-content">
+        <div class="address-section">
+            <h2>Delivery Address</h2>
+            <p>A & W Subdivision, Putik, Zamboanga City</p>
+            <a href="./editaddress.html"><button>Edit Address</button></a>
+        </div>
+        <h1>Choose Payment Method</h1>
+        <div class="payment-method">
+            <div class="method">
+                <img id="gcashLogo" src="./img/gcash.png" alt="GCash Logo">
+                <input type="checkbox" id="gcashCheckbox"> <label for="gcashCheckbox">Pay with GCash</label><br>
+                <div id="gcashDetails" style="display: none;">
+                    <label for="gcashNumber">GCash Number:</label>
+                    <input type="text" id="gcashNumber">
+                    <a href="./checkout.html"><button class="confirmPayment">Confirm Payment</button></a>
+                </div>
+            </div>
+            <div class="method">
+                <img id="codLogo" src="./img/cod.png" alt="COD Logo">
+                <input type="checkbox" id="codCheckbox"> <label for="codCheckbox">Cash on Delivery</label><br>
+                <div id="codDetails" style="display: none;">
+                    <p>No further details required for Cash on Delivery.</p>
+                    <button class="confirmPayment">Confirm Payment</button>
+                </div>
+            </div>
+        </div>
+        <div class="order-summary">
+            <h2>Order Summary</h2>
+            <p> 1× Premium Burger</p>
+            <p> 1× Hot and Spicy Fries</p>
+            <p>Subtotal:₱</p>
+            <p>Delivery Fee:₱</p>
+            <p>Total:₱</p>
+        </div>
+        <a href="./location.html"><button class="confirm-btn">Confirm Address</button></a>
+        <a href="./placeorder.html"><button class="place-btn">Place Order</button></a>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    const gcashCheckbox = document.getElementById('gcashCheckbox');
+    const gcashDetails = document.getElementById('gcashDetails');
+    const gcashNumberInput = document.getElementById('gcashNumber');
+    const confirmPaymentButton = document.getElementById('confirmPayment');
+
+    gcashCheckbox.addEventListener('change', function() {
+        gcashDetails.style.display = gcashCheckbox.checked ? 'block' : 'none';
+    });
+
+    confirmPaymentButton.addEventListener('click', function() {
+        const gcashNumber = gcashNumberInput.value.trim();
+        if (!gcashNumber) {
+            alert('Please enter your GCash number.'); // Alert if GCash number is not input
+            return;
+        }
+        alert('Payment confirmed with GCash. GCash number: ' + gcashNumber);
+    });
+});
+
+    </script>
+</body>
+</html>
+

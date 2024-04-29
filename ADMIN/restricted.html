@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Restricted Accounts</title>
+    <style>
+    body {
+  font-family: Arial, sans-serif;
+  background-color:orange;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color:orangered;
+  color:white;
+  padding:30px;
+  text-align: center;
+}
+
+.restrict-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.restrict-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #fff;
+  margin: 10px 0;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.restrict-details {
+  display: flex;
+  flex-wrap: wrap;
+  color:orangered;
+}
+
+.restrict-detail {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.detail-label {
+  font-weight:bold;
+  margin-right: 10px;
+}
+
+.restrict-actions {
+  display: flex;
+  align-items: center;
+}
+
+.restrict-actions button {
+  padding: 18px;
+  margin-left: 10px;
+  border: none;
+  cursor: pointer;
+}
+.restrict-button {
+  background-color:black;
+  color: #fff;
+  border-radius:13px;
+  
+}
+   .search-btn {
+            padding: 17px 20px;
+            background-color:black;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width:75px;
+            
+        }
+
+        .search-btn:hover {
+            background-color: #45a049;
+        }
+         
+      
+  .arrow-icon {
+  position: fixed;
+  top:25px;
+  left:15px;
+  color: orange;
+  cursor: pointer;
+  z-index: 1000;
+  text-decoration: none;
+  transition: transform 0.2s;
+  
+}
+
+.arrow-icon:hover {
+  transform: translateX(-5px);
+  
+  
+}
+
+
+    </style>
+</head>
+<body>
+     <a href="dashboard (1).html" class="arrow-icon">
+  <i style="font-size:30px" class="fa">&#xf060;</i>
+</a>
+  <header>
+    <h1>Restricted Accounts</h1>
+    <ul class="restrict-list">
+        <li class="restrict-item">
+        <div class="restrict-details">
+          <div class="restrict-detail">
+            <span class="detail-label">Name:</span>
+            <span class="detail-value">John Whhite</span>
+          </div>
+          <div class="restrict-detail">
+            <span class="detail-label">Email:</span>
+            <span class="detail-value">john.doe@example.com</span>
+          </div>
+          <div class="restrict-detail">
+            <span class="detail-label">Contact:</span>
+            <span class="detail-value">+123456789</span>
+          </div>
+        </div>
+        <div class="restrict-actions">
+          <a href="customers1.html"><button class="restrict-button">Unrestrict</button></a>
+        </div>
+        </li>
+        <li class="restrict-item">
+        <div class="restrict-details">
+          <div class="restrict-detail">
+            <span class="detail-label">Name:</span>
+            <span class="detail-value">John Doe</span>
+          </div>
+          <div class="restrict-detail">
+            <span class="detail-label">Email:</span>
+            <span class="detail-value">john.doe@example.com</span>
+          </div>
+          <div class="restrict-detail">
+            <span class="detail-label">Contact:</span>
+              <span class="detail-value">+123456789</span>
+          </div>
+        </div>
+        <div class="restrict-actions">
+          <button class="restrict-button">Unrestrict</button>
+        </div>
+            </li>
+        <li class="restrict-item">
+        <div class="restrict-details">
+          <div class="restrict-detail">
+            <span class="detail-label">Name:</span>
+            <span class="detail-value">John Doe</span>
+          </div>
+          <div class="restrict-detail">
+            <span class="detail-label">Email:</span>
+            <span class="detail-value">john.doe@example.com</span>
+          </div>
+          <div class="restrict-detail">
+            <span class="detail-label">Contact:</span>
+              <span class="detail-value">+123456789</span>
+          </div>
+        </div>
+        <div class="restrict-actions">
+          <button class="restrict-button">Unestrict</button>
+        </div>
+            </li>
+        <li class="restrict-item">
+        <div class="restrict-details">
+          <div class="restrict-detail">
+            <span class="detail-label">Name:</span>
+            <span class="detail-value">John Doe</span>
+          </div>
+          <div class="restrict-detail">
+            <span class="detail-label">Email:</span>
+            <span class="detail-value">john.doe@example.com</span>
+          </div>
+          <div class="restrict-detail">
+            <span class="detail-label">Contact:</span>
+              <span class="detail-value">+123456789</span>
+          </div>
+        </div>
+        <div class="restrict-actions">
+          <button class="restrict-button">Unrestrict</button>
+        </div>
+        </li>
+        <li class="restrict-item">
+        <div class="restrict-details">
+          <div class="restrict-detail">
+            <span class="detail-label">Name:</span>
+            <span class="detail-value">John Doe</span>
+          </div>
+          <div class="restrict-detail">
+            <span class="detail-label">Email:</span>
+            <span class="detail-value">john.doe@example.com</span>
+          </div>
+          <div class="restrict-detail">
+            <span class="detail-label">Contact:</span>
+            <span class="detail-value">+123456789</span>
+          </div>
+        
+        </div>
+        <div class="restrict-actions">
+          <button class="restrict-button">Unrestrict</button>
+        </div>
+        </li>
+        
+      
+    </ul>
+  </header>
+</body>
+</html>

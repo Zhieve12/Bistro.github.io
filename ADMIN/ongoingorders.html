@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Pending</title>
+    <style>
+    body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color:orange;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+.rental-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.rental-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #fff;
+  margin: 10px 0;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.rental-details {
+  display: flex;
+  flex-wrap: wrap;
+  color:purple;
+}
+
+.rental-detail {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.detail-label {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.rental-actions {
+  display: flex;
+  align-items: center;
+}
+
+.rental-actions button {
+  padding: 10px;
+  margin-left: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.done-button {
+  background-color: #27ae60;
+  color: #fff;
+}
+  .arrow-icon {
+  position: fixed;
+  top:25px;
+  left:15px;
+  color: violet;
+  cursor: pointer;
+  z-index: 1000;
+  text-decoration: none;
+  transition: transform 0.2s;
+  
+}
+
+.arrow-icon:hover {
+  transform: translateX(-5px);
+  
+  
+}
+
+</style>
+</head>
+<body>
+    <a href="dashboard (1).html" class="arrow-icon">
+  <i style="font-size:30px" class="fa">&#xf060;</i>
+</a>
+  <header>
+    <h1>Currently Renting</h1>
+    <ul class="rental-list">
+      <li class="rental-item">
+        <div class="rental-details">
+          <div class="rental-detail">
+            <span class="detail-label">Name:</span>
+            <span class="detail-value">Ava Parker</span>
+          </div>
+          <div class="rental-detail">
+            <span class="detail-label">Contact:</span>
+            <span class="detail-value">09865473895</span>
+          </div>
+             <div class="rental-detail">
+            <span class="detail-label">Delivery/Location:</span>
+            <span class="detail-value">2024-10-07 05:00 PM/Guiwan,Zamboanga City</span>
+             </div>
+            <div class="rental-detail">
+            <span class="detail-label">Email:</span>
+            <span class="detail-value">ava.parker@gmail.com</span>
+          </div> 
+          <div class="rental-detail">
+            <span class="detail-label">Order:</span>
+            <span class="detail-value">1x Pineapple Juice</span>
+            </div>
+            
+            <div class="rental-detail">
+            <span class="detail-label">Total</span>
+            <span class="detail-value">₱240.00</span>
+            </div>
+            
+        <div class="rental-actions">
+          <button class="done-button">Done</button>
+        </div>
+        
+            
+            
+        
+        
+        
+       </header>
+    </body>
+</html>

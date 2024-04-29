@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Address</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+            color: #333;
+        }
+        .header {
+            background-color: white;
+            color:black;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .arrow {
+            font-size: 24px;
+            margin-right: 10px;
+            padding-bottom:12px;
+        }
+        .form-container {
+            padding-top: 60px;
+            padding: 20px;
+            margin-top:50px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            font-weight: bold;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        .form-group button {
+            background-color: #ff5e14;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        .form-group button:hover {
+            background-color:black;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <a href="./profile.html"><i class="fas fa-arrow-left arrow"></i></a>
+        <div class="edit-address-text">Edit Address</div>
+    </div>
+    <div class="form-container">
+        <div class="form-group">
+            <label for="street">Street</label>
+            <input type="text" id="street" placeholder="Enter your street">
+        </div>
+        <div class="form-group">
+            <label for="city">City</label>
+            <input type="text" id="city" placeholder="Enter your city">
+        </div>
+        <div class="form-group">
+            <label for="country">Country</label>
+            <input type="text" id="country" placeholder="Enter your country">
+        </div>
+        <div class="form-group">
+        <a href="./profile.html"><button class="save-btn">Save Changes</button></a>
+        </div>
+    </div>
+</body>
+</html>

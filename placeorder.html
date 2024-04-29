@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Place Order</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+            color: #333;
+        }
+        .header {
+            background-color: white;
+            color: black;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+        }
+        .arrow {
+            font-size: 24px;
+            margin-right: 10px;
+            padding-bottom: 12px;
+        }
+        .estimated-time {
+            background-color: white;
+            padding: 10px 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            font-size:25px;
+            font-weight: bold;
+        }
+        
+        .order-details {
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .order-details h2 {
+            margin-top: 0;
+        }
+        .order-item {
+            margin-bottom: 10px;
+        }
+        .total {
+            margin-top: 20px;
+            text-align: right;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <a href="./checkout.html"><i class="fas fa-times arrow"></i></a>
+    </div>
+    <div class="estimated-time">
+        <div>Estimated Time: Arriving in 30 mins</div>
+    </div>
+    <div class="order-details">
+        <h2>Order Details</h2>
+        <div class="order-item">1 x Crispy Chicken Burger ₱130</div>
+        <div class="order-item">1 x Hot and Spicy Fries ₱105</div>
+        <div class="delivery-address">
+            <h2>Delivery Address</h2>
+            <p>123 Main Street, City, Country</p>
+        </div>
+        <div class="total">Total:₱265 (Including VAT)</div>
+    </div>
+</body>
+</html>

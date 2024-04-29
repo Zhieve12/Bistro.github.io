@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Customer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color:white;
+        }
+
+        .container {
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color:bisque;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color:white;
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color:gainsboro;
+        }
+
+        .password {
+            font-family: monospace;
+        }
+
+        .actions {
+            text-align: center;
+            
+        }
+
+        .delete-btn {
+            background-color:orangered;
+            color: #fff;
+            padding: 5px 12px;
+            border:10px;
+            cursor: pointer;
+            width:70px;
+            border-radius:10px;
+            
+        }
+        
+        .restrict-btn {
+            background-color:orangered;
+            color: #fff;
+            padding: 5px 12px;
+            border: none;
+            cursor: pointer;
+            width:70px;
+            border-radius:10px;
+            
+        }
+
+        .delete-btn:hover, .restrict-btn:hover {
+            background-color:orange;
+     
+        }
+        
+        .search-container {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            margin-left:50px;
+            
+           
+        }
+
+        .search-box {
+            padding: 18px;
+            width: 350px;
+            border: 1px solid orange;
+            border-radius: 5px;
+        }
+
+        .sort-select {
+            padding: 17px;
+            width: 80px;
+            border: 1px solid orange;
+            border-radius: 5px;
+            margin:0;
+            
+        }
+
+        .search-btn {
+            padding: 17px 20px;
+            background-color:orangered;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width:75px;
+            
+        }
+
+        .search-btn:hover {
+            background-color:orange;
+        }
+        .arrow-icon {
+  position: fixed;
+  top:25px;
+  left:15px;
+  color: orangered;
+  cursor: pointer;
+  z-index: 1000;
+  text-decoration: none;
+  transition: transform 0.2s;
+  
+}
+
+.arrow-icon:hover {
+  transform: translateX(-5px);
+  
+  
+}
+    </style>
+</head>
+<body>
+      <a href="dashboard (1).html" class="arrow-icon">
+  <i style="font-size:30px" class="fa">&#xf060;</i>
+</a>
+     
+        <div class="container">
+            <h1>Customers</h1>
+            <div class="search-container">
+            <input type="text" class="search-box" placeholder="Search by email">
+            <select class="sort-select" id="sort-select">
+                <option value="email">Sort by Email</option>
+                <option value="current">Sort by Current Transactions</option>
+                <option value="completed">Sort by Completed Transactions</option>
+                <option value="pending">Sort by Pending Transactions</option>
+            </select>
+            <button class="search-btn">Search</button>
+        </div>
+     
+        <table>
+            <thead>
+                <tr>
+                    <th>Email</th>
+                    <th>Password</th>
+                    <th>Current Transactions</th>
+                    <th>Completed Transactions</th>
+                    <th>Pending Transactions</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>customer1@example.com</td>
+                    <td><span class="password">********</span></td>
+                    <td>3</td>
+                    <td>12</td>
+                    <td>2</td>
+                    <td class="actions">
+                        <button class="delete-btn">Delete</button>
+        <a href="restrict.html" class="restrict-btn">Restrict</a>
+                     </td>
+                    </tr>
+                     <tr>
+                    <td>customer2@example.com</td>
+                    <td><span class="password">********</span></td>
+                    <td>1</td>
+                    <td>4</td>
+                    <td>0</td>
+                    <td class="actions">
+                        <button class="delete-btn">Delete</button>
+                        <button class="restrict-btn">Restrict</button>
+                     </td>
+                    </tr>
+                 <tr>
+                    <td>customer3@example.com</td>
+                    <td><span class="password">********</span></td>
+                    <td>0</td>
+                    <td>8</td>
+                    <td>2</td>
+                    <td class="actions">
+                        <button class="delete-btn">Delete</button>
+                        <button class="restrict-btn">Restrict</button>
+                     </td>
+                    </tr>
+                 <tr>
+                    <td>customer4@example.com</td>
+                    <td><span class="password">********</span></td>
+                    <td>2</td>
+                    <td>22</td>
+                    <td>4</td>
+                    <td class="actions">
+                        <button class="delete-btn">Delete</button>
+                        <button class="restrict-btn">Restrict</button>
+                     </td>
+                    </tr>
+                 <tr>
+                    <td>customer5@example.com</td>
+                    <td><span class="password">********</span></td>
+                    <td>1</td>
+                    <td>34</td>
+                    <td>2</td>
+                    <td class="actions">
+                        <button class="delete-btn">Delete</button>
+                        <button class="restrict-btn">Restrict</button>
+                     </td>
+                    </tr>
+                 <tr>
+                    <td>customer6@example.com</td>
+                    <td><span class="password">********</span></td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td class="actions">
+                        <button class="delete-btn">Delete</button>
+                        <button class="restrict-btn">Restrict</button>
+                     </td>
+                    </tr>
+                 <tr>
+                    <td>customer7@example.com</td>
+                    <td><span class="password">********</span></td>
+                    <td>4</td>
+                    <td>10</td>
+                    <td>1</td>
+                    <td class="actions">
+                        <button class="delete-btn">Delete</button>
+                        <button class="restrict-btn">Restrict</button>
+                     </td>
+                    </tr>
+                 <tr>
+                    <td>customer8@example.com</td>
+                    <td><span class="password">********</span></td>
+                    <td>0</td>
+                    <td>10</td>
+                    <td>1</td>
+                    <td class="actions">
+                        <button class="delete-btn">Delete</button>
+                        <button class="restrict-btn">Restrict</button>
+                     </td>
+                    </tr>
+                 <tr>
+                    <td>customer9@example.com</td>
+                    <td><span class="password">********</span></td>
+                    <td>1</td>
+                    <td>6</td>
+                    <td>4</td>
+                    <td class="actions">
+                        <button class="delete-btn">Delete</button>
+                        <button class="restrict-btn">Restrict</button>
+                       
+                     </td>
+                    </tr>
+                 <tr>
+                    <td>customer10@example.com</td>
+                    <td><span class="password">********</span></td>
+                    <td>5</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td class="actions">
+                        <button class="delete-btn">Delete</button>
+                        <button class="restrict-btn">Restrict</button>
+                     </td>
+                    </tr>
+            </tbody>
+        </table>
+   
+    
+    </div>
+</body>
+</html>
