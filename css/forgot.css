@@ -5,7 +5,7 @@
 }
 
 body {
-    background-color: orange;
+    background-color: bisque;
 }
 
 .main {
@@ -39,8 +39,8 @@ body {
     width: 300px;
     margin-top: 10px;
     background: none;
-    border-bottom: 1px solid black; /* Added to better distinguish the input */
-    padding: 5px; /* Added for better spacing */
+    border-bottom: 1px solid black; 
+    padding: 5px;
 }
 
 .main-com {
@@ -84,4 +84,5 @@ body {
     font-size: 24px;
     margin-right: 10px;
     padding-bottom:12px;
+    color:orangered;
 }

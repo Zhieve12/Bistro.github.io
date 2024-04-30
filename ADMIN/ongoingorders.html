@@ -8,14 +8,13 @@
     <style>
     body {
   font-family: Arial, sans-serif;
-  background-color: #f0f0f0;
+  background-color:bisque;
   margin: 0;
   padding: 0;
 }
 
 header {
-  background-color:orange;
-  color: #fff;
+  color:black;
   padding: 20px;
   text-align: center;
 }
@@ -37,8 +36,10 @@ header {
 
 .rental-details {
   display: flex;
-  flex-wrap: wrap;
-  color:purple;
+    flex-wrap: wrap;
+    color: black;
+    justify-content: flex-end;
+    align-items: center;
 }
 
 .rental-detail {
@@ -66,14 +67,19 @@ header {
 }
 
 .done-button {
-  background-color: #27ae60;
+  background-color:orangered;
   color: #fff;
+  padding: 5px 12px;
+  border:10px;
+  cursor: pointer;
+  width:70px;
+  border-radius:10px;
 }
   .arrow-icon {
   position: fixed;
   top:25px;
   left:15px;
-  color: violet;
+  color:orangered;
   cursor: pointer;
   z-index: 1000;
   text-decoration: none;
@@ -94,7 +100,7 @@ header {
   <i style="font-size:30px" class="fa">&#xf060;</i>
 </a>
   <header>
-    <h1>Currently Renting</h1>
+    <h1>Pending Orders</h1>
     <ul class="rental-list">
       <li class="rental-item">
         <div class="rental-details">
@@ -123,16 +129,14 @@ header {
             <span class="detail-label">Total</span>
             <span class="detail-value">₱240.00</span>
             </div>
-            
-        <div class="rental-actions">
-          <button class="done-button">Done</button>
-        </div>
-        
-            
-            
-        
-        
-        
+          </div>
+          <div class="rental-actions">
+            <a href="./done.html"><button class="done-button">Done</button></a>
+          </div>
+          </li>
+          
+          </ul>
+          
        </header>
     </body>
 </html>
