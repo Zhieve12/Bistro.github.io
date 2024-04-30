@@ -54,10 +54,38 @@ footer {
     display: flex;
     flex-direction: row;
     justify-content:space-between;
-    margin:20px;
+
+    background-color: orange;
     
-    
-    
+}
+
+.about-us{
+    margin-right: 25px;
+}
+
+.contact-us{
+    margin-left: 25px;
+}
+
+.contact-text{
+    color: black;
+    text-decoration: none;
+}
+
+.content{
+    color: black;
+    text-decoration: none;
+}
+
+.middle-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.about {
+    display: flex;
+    flex-direction: column;
 }
 
 .about {
@@ -99,3 +127,4 @@ footer {
 .mission-vision-goals{
     align-items: center;
 }
+
